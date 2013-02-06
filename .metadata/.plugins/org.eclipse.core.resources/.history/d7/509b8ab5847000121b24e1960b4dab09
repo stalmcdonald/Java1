@@ -1,0 +1,114 @@
+/*
+ * 
+ */
+package com.crystalmcdonald.week1;
+
+import com.crystalmcdonald.week1.R;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.TextView.BufferType;
+import android.support.v4.app.NavUtils;
+
+
+// TODO: Auto-generated Javadoc
+
+public class Main extends Activity {
+
+	LinearLayout myLayout;
+	
+	/** The lp. */
+	LinearLayout.LayoutParams myLp;
+
+	TextView result;
+	
+	/** The et. */
+	EditText editEntry;
+	 int virusExposedInd = 107;
+     int zombie = virusExposedInd;
+
+	
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreate(android.os.Bundle)
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        myLayout = new LinearLayout(this);
+        myLayout.setOrientation(LinearLayout.VERTICAL);
+        myLp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        myLayout.setLayoutParams(myLp);
+        
+        TextView ammoView = new TextView(this);
+        ammoView.setText("After an explosion of Ajack Chemical Factory, workers started displaying what can only be characterized as zombie-like symptoms. There has been widespread panic but CDC assures us that there are no long-term repercussions of the chemical explosion. We have asked Ajack Chemical Factory to comment and they have thus far remained silent. We advise everyone to stay indoors as a safety precaution. We interviewed an employee of the factory who was miraculously home from work today. His name has been withheld but he made the following statement to the public as an inside source. I have checked on many co-workers today, their families are worried about the symptoms and the zombie like behavior they are exhibiting. The CDC says they have are compiling a damage report and that everything is under control. At this time they have rounded up those infected. Total population infected =%f.");
+ 
+        myLayout.addView(ammoView);
+        
+        editEntry = new EditText(this);
+        editEntry.setHint("# of Zombies");
+        //ll.addView(et);
+        
+        Button ammoButton = new Button(this);
+        ammoButton.setText("Ammo Needed");
+        //ll.addView(b);
+        ammoButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				int gun = getResources().getInteger(R.integer.gun);
+				int crossbow = getResources().getInteger(R.integer.crossbow);
+				int bow = getResources().getInteger(R.integer.bow);
+				//int penny = getResources().getInteger(R.integer.penny);
+				
+				int entry = Integer.parseInt(editEntry.getText().toString());
+				
+				int numG = (10/gun)*entry;
+				int numC = (10/crossbow)*entry;
+				int numB = (10/bow)*entry;
+				//int numP = (100/penny)*entry;
+				
+				result.setText("Gun: " + numG + "\r\n" +
+						       "Crossbow: " + numC + "\r\n" +
+						       //"Nickel: " + numN + "\r\n" +
+						       "Bow: " + numB + "\r\n"
+						       );
+				
+			}
+		});
+        
+        LinearLayout form = new LinearLayout(this);
+        form.setOrientation(LinearLayout.HORIZONTAL);
+        myLp= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        form.setLayoutParams(myLp);
+        
+        form.addView(editEntry);
+        form.addView(ammoButton);
+        
+        myLayout.addView(form);
+        
+        result = new TextView(this);
+        //result.setLayoutParams(lp);
+        myLayout.addView(result);
+        
+        setContentView(myLayout);
+    }
+
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}

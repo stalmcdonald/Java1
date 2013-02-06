@@ -1,3 +1,6 @@
+/*
+ * Crystal McDonald
+ */
 package com.example.androiduidemo;
 
 import android.os.Bundle;
@@ -11,14 +14,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MainActivity.
+ */
 public class MainActivity extends Activity {
 
+	/** The ll. */
 	LinearLayout ll;
+	
+	/** The lp. */
 	LinearLayout.LayoutParams lp;
+	
+	/** The result. */
 	TextView result;
+	
+	/** The et. */
 	EditText et;
 
 	
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreate(android.os.Bundle)
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +100,9 @@ public class MainActivity extends Activity {
         setContentView(ll);
     }
 
+    /* (non-Javadoc)
+     * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

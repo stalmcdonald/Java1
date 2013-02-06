@@ -1,0 +1,7 @@
+<resources>
+    
+    <integer name="gun">10</integer>
+    <integer name="crossbow">5</integer>
+    <integer name="bow">2</integer>
+    
+</resources>

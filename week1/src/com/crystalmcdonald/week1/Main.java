@@ -57,6 +57,12 @@ public class Main extends Activity {
         
         myLayout.addView(storyView);
         
+      //Spacer
+        //Adds space between each feature just for testing purpose
+        //uncomment code below to space each feature
+//        TextView spaceView = new TextView(this);
+//        
+//        myLayout.addView(spaceView);
         
       //If, Else If, Else
         //Tells users what to expect in their environment
@@ -75,6 +81,11 @@ public class Main extends Activity {
         }
         myLayout.addView(conditionalView);
         
+      //Spacer
+        //Adds space between each feature just for testing purposes
+//        TextView spacerView = new TextView(this);
+//        
+//        myLayout.addView(spacerView);
       
         //Boolean statement
         //Companions are vital to survival!
@@ -89,6 +100,12 @@ public class Main extends Activity {
         }
         myLayout.addView(boolView);
         
+      //Spacer
+        //Adds space between each feature just for testing purposes
+//        TextView spacingView = new TextView(this);
+//        
+//        myLayout.addView(spacingView);
+        
       //Casting Float requirements
         //weapons
         TextView floatView = new TextView(this);
@@ -97,6 +114,12 @@ public class Main extends Activity {
         int myweapons = (int) weaponsatchel;
         floatView.setText("You have %f storage slots in your satchel and %d weapons to use. Resupply as needed.");//, weaponsatchel, myweapons);
         myLayout.addView(floatView);
+        
+        //Function
+        //Ammo tracking
+        TextView functionView = new TextView(this);
+        
+        myLayout.addView(functionView);
         
       //Fighting Zombies Zombies vs Ammo
         //For - Single Loop
@@ -109,6 +132,7 @@ public class Main extends Activity {
             zombie = (zombie - 1);
             ammo = (ammo -1);
             loopView.setText("One zombie shot.");
+            
 //            loopView.setText("Zombies left=%d.", zombie);
 //            loopView.setText("Ammo left=%d.", ammo);
             
@@ -127,6 +151,12 @@ public class Main extends Activity {
                 }
             }
         myLayout.addView(loopView);
+        
+      //Spacer
+        //Adds space between each feature just for testing purposes
+//        TextView spacedView = new TextView(this);
+//        
+//        myLayout.addView(spacedView);
         
         //Instructions for Edit view 
         TextView ammoView = new TextView(this);

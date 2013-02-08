@@ -120,6 +120,17 @@ public class Main extends Activity {
         myLayout.addView(floatView1);
         
               
+        LinearLayout myLinLayout;
+    	
+    	/** The lp. */
+    	LinearLayout.LayoutParams myLayP;
+    	
+    	//layout and parameters
+    	myLinLayout = new LinearLayout(this);
+    	myLinLayout.setOrientation(LinearLayout.VERTICAL);
+    	myLayP = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        myLinLayout.setLayoutParams(myLayP);
+        
         
         //Function
         //Ammo tracking
@@ -135,12 +146,13 @@ public class Main extends Activity {
         	
         }
         
-		myLayout.addView(functionView);
+		myLinLayout.addView(functionView);
         
       //While Statement
         //Friends infected
         //I wanted it to increment value but can't figure out how to set it up in Java
         TextView whileView = new TextView(this);
+        TextView whileView1 = new TextView(this);
         TextView whileView2 = new TextView(this);
         int friendsInfected = 5;
         whileView.setText("During the battle friends were infected with the Zombie Virus." + friendsInfected);
@@ -152,11 +164,12 @@ public class Main extends Activity {
         {
             i++;
             x = (x+1);
-            whileView2.setText("Days have passed."+ x);
+            whileView1.setText("Days have passed."+ x);
             whileView2.setText("Companion(s) turned to a zombie:" + x);
         }
-        myLayout.addView(whileView);
-        myLayout.addView(whileView2);
+        myLinLayout.addView(whileView);
+        myLinLayout.addView(whileView1);
+        myLinLayout.addView(whileView2);
         
         
       //Fighting Zombies Zombies vs Ammo
@@ -164,6 +177,7 @@ public class Main extends Activity {
         //added additional views so they all print I am sure there is an easier and better way to do this but I haven't figured that out yet.
         TextView loopView = new TextView(this);
         TextView loopView1 = new TextView(this);
+        TextView loopView2 = new TextView(this);
         TextView loopView3 = new TextView(this);
         TextView loopView4 = new TextView(this);
         TextView loopView5 = new TextView(this);
@@ -176,7 +190,7 @@ public class Main extends Activity {
             ammo = (ammo -1);
             loopView1.setText("One zombie shot.");
             
-            loopView3.setText("Zombies left:" + zombie);
+            loopView2.setText("Zombies left:" + zombie);
             loopView3.setText("Ammo left." + ammo);
             
             
@@ -193,11 +207,12 @@ public class Main extends Activity {
             	loopView5.setText("All zombies are dead.");
                 }
             }
-        myLayout.addView(loopView);
-        myLayout.addView(loopView1);
-        myLayout.addView(loopView3);
-        myLayout.addView(loopView4);
-        myLayout.addView(loopView5);
+        myLinLayout.addView(loopView);
+        myLinLayout.addView(loopView1);
+        myLinLayout.addView(loopView2);
+        myLinLayout.addView(loopView3);
+        myLinLayout.addView(loopView4);
+        myLinLayout.addView(loopView5);
         
         //Instructions for Edit view 
         TextView ammoView = new TextView(this);

@@ -6,7 +6,6 @@ package com.crystalmcdonald.week1;
 import com.crystalmcdonald.week1.R;
 
 import android.os.Bundle;
-import android.provider.Settings.System;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -110,79 +109,60 @@ public class Main extends Activity {
         
         //string to int
         //weapons
-        TextView weaponView = new TextView(this);
-        TextView floatView1 = new TextView(this);
-        weaponView.setText("Always remember weapons are important to your survival. Don't forget to stock up!");
+        TextView floatView = new TextView(this);
+        floatView.setText("Always remember weapons are important to your survival. Don't forget to stock up!");
         int weaponsatchel = 8;
         int myweapons = (int) weaponsatchel;
-        floatView1.setText("Ammo slots for satchel: "+ myweapons);
-        myLayout.addView(weaponView);
-        myLayout.addView(floatView1);
+        floatView.setText("Ammo slots for satchel: "+ weaponsatchel);
+        myLayout.addView(floatView);
         
               
-        
+  		
         //Function
         //Ammo tracking
-        TextView  functionView = new TextView(this);
-       
-        int a = 4;
-	        getAmmo(a);
-		int kind = 1;
-		int message = 2; { 
-        	int weap = 4;
-        	int count = a * a * weap;
-        	functionView.setText(kind + " ammo used. ammo left: " + count + message);
-        	
-        }
+        //TextView  functionView = new TextView(this);
+//         int weap = 4;
+//         int ammo = 6;
+//        
+//        public static  int getAmmo(a,kind, message); { 
+//        	int weap = 4;
+//        	int ammo = 6;
+//        	
+//        	count = a * a * weap;
+//        	functionView.setText(kind + " ammo has " + count + message);
+//        	
+//        }
+//        	count = a * a * weap;
+//        	functionView.setText(kind + " ammo has " + count + message);
         
-		myLayout.addView(functionView);
+//        	//For a function that takes two numbers and returns their sum:
+//        	 
+//        	public int addInts(int 4, int 6) {
+//
+//        	  return firstnum + secondnum;
+
         
-      //While Statement
-        //Friends infected
-        //I wanted it to increment value but can't figure out how to set it up in Java
-        TextView whileView = new TextView(this);
-        TextView whileView2 = new TextView(this);
-        int friendsInfected = 5;
-        whileView.setText("During the battle friends were infected with the Zombie Virus." + friendsInfected);
-        
-        int x=0;
-        int f = friendsInfected;
-        int i =0;
-        while (i < f)
-        {
-            i++;
-            x = (x+1);
-            whileView2.setText("Days have passed."+ x);
-            whileView2.setText("Companion(s) turned to a zombie:" + x);
-        }
-        myLayout.addView(whileView);
-        myLayout.addView(whileView2);
-        
+        //myLayout.addView(functionView);
         
       //Fighting Zombies Zombies vs Ammo
         //For - Single Loop
-        //added additional views so they all print I am sure there is an easier and better way to do this but I haven't figured that out yet.
         TextView loopView = new TextView(this);
-        TextView loopView1 = new TextView(this);
-        TextView loopView3 = new TextView(this);
-        TextView loopView4 = new TextView(this);
-        TextView loopView5 = new TextView(this);
         loopView.setText("You have encountered a mob of zombies");
-        int ammo = 10;
+        int ammo = 100;
         int shots = zombie;
         for (int c =0; c < shots; c++)
         {
             zombie = (zombie - 1);
             ammo = (ammo -1);
-            loopView1.setText("One zombie shot.");
+            loopView.setText("One zombie shot.");
             
-            loopView3.setText("Zombies left:" + zombie);
-            loopView3.setText("Ammo left." + ammo);
+            loopView.setText("Zombies left:" + zombie);
+            loopView.setText("Ammo left." + ammo);
             
             
             if(ammo == 0)
             {
-            	loopView4.setText("You are out of ammo. Ammo reloaded to 10.");
+            	loopView.setText("You are out of ammo. Ammo reloaded to 10.");
                 ammo =10;
             }
             
@@ -190,14 +170,16 @@ public class Main extends Activity {
             else if ((ammo >= 0)&&(zombie==0))
                 {
         
-            	loopView5.setText("All zombies are dead.");
+            	loopView.setText("All zombies are dead.");
                 }
             }
         myLayout.addView(loopView);
-        myLayout.addView(loopView1);
-        myLayout.addView(loopView3);
-        myLayout.addView(loopView4);
-        myLayout.addView(loopView5);
+        
+      //Spacer
+        //Adds space between each feature just for testing purposes
+//        TextView spacedView = new TextView(this);
+//        
+//        myLayout.addView(spacedView);
         
         //Instructions for Edit view 
         TextView ammoView = new TextView(this);
@@ -254,14 +236,15 @@ public class Main extends Activity {
         setContentView(myLayout);
     }
 
-    
+    private int returnFive() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
-	private void getAmmo(int a) {
+	private void getText(String string) {
 		// TODO Auto-generated method stub
 		
 	}
-
-
 
 	/* (non-Javadoc)
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)

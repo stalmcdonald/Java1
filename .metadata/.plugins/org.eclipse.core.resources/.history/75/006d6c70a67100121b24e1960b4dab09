@@ -141,6 +141,7 @@ public class Main extends Activity {
         //Friends infected
         //I wanted it to increment value but can't figure out how to set it up in Java
         TextView whileView = new TextView(this);
+        TextView whileView1 = new TextView(this);
         TextView whileView2 = new TextView(this);
         int friendsInfected = 5;
         whileView.setText("During the battle friends were infected with the Zombie Virus." + friendsInfected);
@@ -152,10 +153,11 @@ public class Main extends Activity {
         {
             i++;
             x = (x+1);
-            whileView2.setText("Days have passed."+ x);
+            whileView1.setText("Days have passed."+ x);
             whileView2.setText("Companion(s) turned to a zombie:" + x);
         }
         myLayout.addView(whileView);
+        myLayout.addView(whileView1);
         myLayout.addView(whileView2);
         
         
@@ -164,6 +166,7 @@ public class Main extends Activity {
         //added additional views so they all print I am sure there is an easier and better way to do this but I haven't figured that out yet.
         TextView loopView = new TextView(this);
         TextView loopView1 = new TextView(this);
+        TextView loopView2 = new TextView(this);
         TextView loopView3 = new TextView(this);
         TextView loopView4 = new TextView(this);
         TextView loopView5 = new TextView(this);
@@ -176,7 +179,7 @@ public class Main extends Activity {
             ammo = (ammo -1);
             loopView1.setText("One zombie shot.");
             
-            loopView3.setText("Zombies left:" + zombie);
+            loopView2.setText("Zombies left:" + zombie);
             loopView3.setText("Ammo left." + ammo);
             
             
@@ -195,6 +198,7 @@ public class Main extends Activity {
             }
         myLayout.addView(loopView);
         myLayout.addView(loopView1);
+        myLayout.addView(loopView2);
         myLayout.addView(loopView3);
         myLayout.addView(loopView4);
         myLayout.addView(loopView5);

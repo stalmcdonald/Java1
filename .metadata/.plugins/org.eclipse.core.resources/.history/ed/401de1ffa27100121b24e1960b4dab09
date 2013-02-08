@@ -119,85 +119,11 @@ public class Main extends Activity {
         myLayout.addView(weaponView);
         myLayout.addView(floatView1);
         
-              
-        
-        //Function
-        //Ammo tracking
-        TextView  functionView = new TextView(this);
-       
-        int a = 4;
-	        getAmmo(a);
-		int kind = 1;
-		int message = 2; { 
-        	int weap = 4;
-        	int count = a * a * weap;
-        	functionView.setText(kind + " ammo used. ammo left: " + count + message);
-        	
-        }
-        
-		myLayout.addView(functionView);
-        
-      //While Statement
-        //Friends infected
-        //I wanted it to increment value but can't figure out how to set it up in Java
-        TextView whileView = new TextView(this);
-        TextView whileView2 = new TextView(this);
-        int friendsInfected = 5;
-        whileView.setText("During the battle friends were infected with the Zombie Virus." + friendsInfected);
-        
-        int x=0;
-        int f = friendsInfected;
-        int i =0;
-        while (i < f)
-        {
-            i++;
-            x = (x+1);
-            whileView2.setText("Days have passed."+ x);
-            whileView2.setText("Companion(s) turned to a zombie:" + x);
-        }
-        myLayout.addView(whileView);
-        myLayout.addView(whileView2);
-        
-        
-      //Fighting Zombies Zombies vs Ammo
-        //For - Single Loop
-        //added additional views so they all print I am sure there is an easier and better way to do this but I haven't figured that out yet.
-        TextView loopView = new TextView(this);
-        TextView loopView1 = new TextView(this);
-        TextView loopView3 = new TextView(this);
-        TextView loopView4 = new TextView(this);
-        TextView loopView5 = new TextView(this);
-        loopView.setText("You have encountered a mob of zombies");
-        int ammo = 10;
-        int shots = zombie;
-        for (int c =0; c < shots; c++)
-        {
-            zombie = (zombie - 1);
-            ammo = (ammo -1);
-            loopView1.setText("One zombie shot.");
-            
-            loopView3.setText("Zombies left:" + zombie);
-            loopView3.setText("Ammo left." + ammo);
-            
-            
-            if(ammo == 0)
-            {
-            	loopView4.setText("You are out of ammo. Ammo reloaded to 10.");
-                ammo =10;
-            }
-            
-        
-            else if ((ammo >= 0)&&(zombie==0))
-                {
-        
-            	loopView5.setText("All zombies are dead.");
-                }
-            }
-        myLayout.addView(loopView);
-        myLayout.addView(loopView1);
-        myLayout.addView(loopView3);
-        myLayout.addView(loopView4);
-        myLayout.addView(loopView5);
+      //Spacer
+        //Adds space between each feature just for testing purposes
+//        TextView spacedView = new TextView(this);
+//        
+//        myLayout.addView(spacedView);
         
         //Instructions for Edit view 
         TextView ammoView = new TextView(this);
@@ -254,12 +180,89 @@ public class Main extends Activity {
         setContentView(myLayout);
     }
 
+    //Function
+    //Ammo tracking
+    TextView  functionView = new TextView(this);
+   
+    int a = 4;
+        getAmmo(a);
+	int kind = 1;
+	int message = 2; { 
+    	int weap = 4;
+    	int ammo = 6;
+    	
+    	int count = a * a * weap;
+    	functionView.setText(kind + " ammo used. Ammo left: " + count + message);
+    	
+    }
     
-
-	private void getAmmo(int a) {
-		// TODO Auto-generated method stub
-		
-	}
+    myLayout.addView(functionView);
+    
+  //While Statement
+    //Friends infected
+    //I wanted it to increment value but can't figure out how to set it up in Java
+    TextView whileView = new TextView(this);
+    TextView whileView1 = new TextView(this);
+    TextView whileView2 = new TextView(this);
+    int friendsInfected = 5;
+    whileView.setText("During the battle friends were infected with the Zombie Virus." + friendsInfected);
+    
+    int x=0;
+    int f = friendsInfected;
+    int i =0;
+    while (i < f)
+    {
+        i++;
+        x = (x+1);
+        whileView1.setText("Days have passed."+ x);
+        whileView2.setText("Companion(s) turned to a zombie:" + x);
+    }
+    myLayout.addView(whileView);
+    myLayout.addView(whileView1);
+    myLayout.addView(whileView2);
+    
+    
+  //Fighting Zombies Zombies vs Ammo
+    //For - Single Loop
+    //added additional views so they all print I am sure there is an easier and better way to do this but I haven't figured that out yet.
+    TextView loopView = new TextView(this);
+    TextView loopView1 = new TextView(this);
+    TextView loopView2 = new TextView(this);
+    TextView loopView3 = new TextView(this);
+    TextView loopView4 = new TextView(this);
+    TextView loopView5 = new TextView(this);
+    loopView.setText("You have encountered a mob of zombies");
+    int ammo = 10;
+    int shots = zombie;
+    for (int c =0; c < shots; c++)
+    {
+        zombie = (zombie - 1);
+        ammo = (ammo -1);
+        loopView1.setText("One zombie shot.");
+        
+        loopView2.setText("Zombies left:" + zombie);
+        loopView3.setText("Ammo left." + ammo);
+        
+        
+        if(ammo == 0)
+        {
+        	loopView4.setText("You are out of ammo. Ammo reloaded to 10.");
+            ammo =10;
+        }
+        
+    
+        else if ((ammo >= 0)&&(zombie==0))
+            {
+    
+        	loopView5.setText("All zombies are dead.");
+            }
+        }
+    myLayout.addView(loopView);
+    myLayout.addView(loopView1);
+    myLayout.addView(loopView2);
+    myLayout.addView(loopView3);
+    myLayout.addView(loopView4);
+    myLayout.addView(loopView5);
 
 
 

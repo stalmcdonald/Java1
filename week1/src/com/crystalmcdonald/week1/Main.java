@@ -6,6 +6,7 @@ package com.crystalmcdonald.week1;
 import com.crystalmcdonald.week1.R;
 
 import android.os.Bundle;
+import android.provider.Settings.System;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,9 +35,10 @@ public class Main extends Activity {
 	//integers
 	 int virusExposedInd = 107;
      int zombie = virusExposedInd;
-     double infected = 107.0d;
+     int infected = 107;
      int infectedPeople = (int) infected;
      Boolean companions=true ;
+     
 	
     /* (non-Javadoc)
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -53,7 +55,7 @@ public class Main extends Activity {
         
         //story gives context to app
         TextView storyView = new TextView(this);
-        storyView.setText("After an explosion of Ajack Chemical Factory, workers started displaying what can only be characterized as zombie-like symptoms. There has been widespread panic but CDC assures us that there are no long-term repercussions of the chemical explosion. We have asked Ajack Chemical Factory to comment and they have thus far remained silent. We advise everyone to stay indoors as a safety precaution. We interviewed an employee of the factory who was miraculously home from work today. His name has been withheld but he made the following statement to the public as an inside source. I have checked on many co-workers today, their families are worried about the symptoms and the zombie like behavior they are exhibiting. The CDC says they have are compiling a damage report and that everything is under control. At this time they have rounded up those infected. Total population infected =%d.");
+        storyView.setText("After an explosion of Ajack Chemical Factory, workers started displaying what can only be characterized as zombie-like symptoms. There has been widespread panic but CDC assures us that there are no long-term repercussions of the chemical explosion. We have asked Ajack Chemical Factory to comment and they have thus far remained silent. We advise everyone to stay indoors as a safety precaution. We interviewed an employee of the factory who was miraculously home from work today. His name has been withheld but he made the following statement to the public as an inside source. I have checked on many co-workers today, their families are worried about the symptoms and the zombie like behavior they are exhibiting. The CDC says they have are compiling a damage report and that everything is under control. At this time they have rounded up those infected. Total population infected:" + virusExposedInd);
         
         myLayout.addView(storyView);
         
@@ -106,24 +108,65 @@ public class Main extends Activity {
 //        
 //        myLayout.addView(spacingView);
         
-      //Casting Float requirements
+        //string to int
         //weapons
-        TextView floatView = new TextView(this);
-        floatView.setText("Always remember weapons are important to your survival. Don't forget to stock up!");
-        float weaponsatchel = 8.56362f;
+        TextView weaponView = new TextView(this);
+        TextView floatView1 = new TextView(this);
+        weaponView.setText("Always remember weapons are important to your survival. Don't forget to stock up!");
+        int weaponsatchel = 8;
         int myweapons = (int) weaponsatchel;
-        floatView.setText("You have %f storage slots in your satchel and %d weapons to use. Resupply as needed.");//, weaponsatchel, myweapons);
-        myLayout.addView(floatView);
+        floatView1.setText("Ammo slots for satchel: "+ myweapons);
+        myLayout.addView(weaponView);
+        myLayout.addView(floatView1);
+        
+              
         
         //Function
         //Ammo tracking
-        TextView functionView = new TextView(this);
+        TextView  functionView = new TextView(this);
+       
+        int a = 4;
+	        getAmmo(a);
+		int kind = 1;
+		int message = 2; { 
+        	int weap = 4;
+        	int count = a * a * weap;
+        	functionView.setText(kind + " ammo used. ammo left: " + count + message);
+        	
+        }
         
-        myLayout.addView(functionView);
+		myLayout.addView(functionView);
+        
+      //While Statement
+        //Friends infected
+        //I wanted it to increment value but can't figure out how to set it up in Java
+        TextView whileView = new TextView(this);
+        TextView whileView2 = new TextView(this);
+        int friendsInfected = 5;
+        whileView.setText("During the battle friends were infected with the Zombie Virus." + friendsInfected);
+        
+        int x=0;
+        int f = friendsInfected;
+        int i =0;
+        while (i < f)
+        {
+            i++;
+            x = (x+1);
+            whileView2.setText("Days have passed."+ x);
+            whileView2.setText("Companion(s) turned to a zombie:" + x);
+        }
+        myLayout.addView(whileView);
+        myLayout.addView(whileView2);
+        
         
       //Fighting Zombies Zombies vs Ammo
         //For - Single Loop
+        //added additional views so they all print I am sure there is an easier and better way to do this but I haven't figured that out yet.
         TextView loopView = new TextView(this);
+        TextView loopView1 = new TextView(this);
+        TextView loopView3 = new TextView(this);
+        TextView loopView4 = new TextView(this);
+        TextView loopView5 = new TextView(this);
         loopView.setText("You have encountered a mob of zombies");
         int ammo = 10;
         int shots = zombie;
@@ -131,15 +174,15 @@ public class Main extends Activity {
         {
             zombie = (zombie - 1);
             ammo = (ammo -1);
-            loopView.setText("One zombie shot.");
+            loopView1.setText("One zombie shot.");
             
-//            loopView.setText("Zombies left=%d.", zombie);
-//            loopView.setText("Ammo left=%d.", ammo);
+            loopView3.setText("Zombies left:" + zombie);
+            loopView3.setText("Ammo left." + ammo);
             
             
             if(ammo == 0)
             {
-            	loopView.setText("You are out of ammo. Ammo reloaded to 10.");
+            	loopView4.setText("You are out of ammo. Ammo reloaded to 10.");
                 ammo =10;
             }
             
@@ -147,16 +190,14 @@ public class Main extends Activity {
             else if ((ammo >= 0)&&(zombie==0))
                 {
         
-            	loopView.setText("All zombies are dead.");
+            	loopView5.setText("All zombies are dead.");
                 }
             }
         myLayout.addView(loopView);
-        
-      //Spacer
-        //Adds space between each feature just for testing purposes
-//        TextView spacedView = new TextView(this);
-//        
-//        myLayout.addView(spacedView);
+        myLayout.addView(loopView1);
+        myLayout.addView(loopView3);
+        myLayout.addView(loopView4);
+        myLayout.addView(loopView5);
         
         //Instructions for Edit view 
         TextView ammoView = new TextView(this);
@@ -166,7 +207,7 @@ public class Main extends Activity {
         //Edit
         editEntry = new EditText(this);
         editEntry.setHint("# of Zombies");
-        //ll.addView(et);
+
         
         //Button
         Button ammoButton = new Button(this);
@@ -176,11 +217,11 @@ public class Main extends Activity {
         	//resources
 			@Override
 			public void onClick(View v) {
-				int gun = getResources().getInteger(R.integer.gun);
+				int gun = getResources().getInteger(R.integer.gun);//function
 				int crossbow = getResources().getInteger(R.integer.crossbow);
 				int bow = getResources().getInteger(R.integer.bow);
 				
-				
+				//string
 				int numEntered = Integer.parseInt(editEntry.getText().toString());
 				
 				int numG = (10/gun)*numEntered;
@@ -196,6 +237,7 @@ public class Main extends Activity {
 			}
 		});
         
+
         LinearLayout myLLView = new LinearLayout(this);
         myLLView.setOrientation(LinearLayout.HORIZONTAL);
         myLp= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -207,16 +249,19 @@ public class Main extends Activity {
         myLayout.addView(myLLView);
         
         result = new TextView(this);
-        //result.setLayoutParams(lp);
         myLayout.addView(result);
         
         setContentView(myLayout);
     }
 
-    private void getText(String string) {
+    
+
+	private void getAmmo(int a) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 	/* (non-Javadoc)
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)

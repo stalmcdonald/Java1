@@ -823,6 +823,7 @@ java.lang.IllegalArgumentException: Argument cannot be null
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2013-02-07 20:20:30.677
 !MESSAGE Background Indexer Crash Recovery
 !STACK 0
@@ -838,3 +839,105 @@ java.lang.NegativeArraySizeException
 	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:569)
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:388)
 	at java.lang.Thread.run(Thread.java:680)
+=======
+!ENTRY org.eclipse.core.resources 2 2 2013-02-07 20:26:20.967
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2013-02-07 20:26:20.967
+!MESSAGE The project description file (.project) for 'AndroidUIDemo' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2013-02-07 20:26:20.968
+!MESSAGE The project description file (.project) for 'My First App' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SESSION 2013-02-09 09:18:09.704 -----------------------------------------------
+eclipse.buildId=v21.0.1-543035
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/crystalmcdonald/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/crystalmcdonald/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-02-09 10:18:33.136
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:36.472
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project AndroidUIDemo
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:36.473
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project My First App
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:36.904
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /AndroidUIDemo
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:350)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:97)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:113)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:85)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:800)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:36.965
+!MESSAGE Failed to load properties file for project 'AndroidUIDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:38.357
+!MESSAGE Failed to load properties file for project 'AndroidUIDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:38.359
+!MESSAGE Failed to finish PrecompilerBuilder#startupOnInitialize()
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /My First App
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2163)
+	at org.eclipse.core.internal.resources.Container.getFolder(Container.java:222)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.buildSourceFileList(SourceProcessor.java:350)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:97)
+	at com.android.ide.eclipse.adt.internal.build.SourceProcessor.<init>(SourceProcessor.java:113)
+	at com.android.ide.eclipse.adt.internal.build.AidlProcessor.<init>(AidlProcessor.java:85)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.startupOnInitialize(PreCompilerBuilder.java:800)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:542)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:567)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:237)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:38.360
+!MESSAGE Failed to load properties file for project 'My First App'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:38.418
+!MESSAGE Failed to load properties file for project 'My First App'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:39.114
+!MESSAGE Failed to load properties file for project 'AndroidUIDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:39.115
+!MESSAGE Failed to load properties file for project 'My First App'
+
+!ENTRY org.eclipse.core.net 1 0 2013-02-09 10:18:40.633
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:49.597
+!MESSAGE Failed to load properties file for project 'AndroidUIDemo'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:18:49.597
+!MESSAGE Failed to load properties file for project 'My First App'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-02-09 10:21:49.163
+!MESSAGE Failed to load properties file for project 'Contacts'
+>>>>>>> master

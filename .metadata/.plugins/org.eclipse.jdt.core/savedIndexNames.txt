@@ -1,5 +1,6 @@
 INDEX VERSION 1.126+/Users/crystalmcdonald/Desktop/FullSail/github/MDVBS/Java1/.metadata/.plugins/org.eclipse.jdt.core
 <<<<<<< HEAD
+<<<<<<< HEAD
 3387652230.index
 2492556067.index
 3828507124.index
@@ -9,4 +10,26 @@ INDEX VERSION 1.126+/Users/crystalmcdonald/Desktop/FullSail/github/MDVBS/Java1/.
 3828507124.index
 >>>>>>> master
 2702895542.index
+=======
+>>>>>>> master
 3247176609.index
+81708458.index
+2702895542.index
+2917917056.index
+3351358570.index
+3213481450.index
+3828507124.index
+2043265145.index
+3151665680.index
+2893143864.index
+702352317.index
+2329024243.index
+1706572544.index
+3241273485.index
+765453901.index
+2332527393.index
+3853392253.index
+3292382646.index
+3468613550.index
+2583270963.index
+306941836.index

@@ -1,0 +1,5 @@
+package SS;
+
+public enum Planet {
+
+}

@@ -1,0 +1,5 @@
+package com.cmcdonald.SS;
+
+public interface PlanetInterface {
+String orbits()
+}

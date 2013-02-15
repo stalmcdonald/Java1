@@ -1,0 +1,22 @@
+package com.cmcdonald.lib;
+
+import android.content.Context;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
+
+public class FormThings {
+	
+	public static LinearLayout singleEntryWithButton(Context context){
+		LinearLayout ll = new LinearLayout(context);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
+		ll.setLayoutParams(lp);
+		
+		//text view and button
+		EditText et = new EditText(context);
+		
+		Button b = new Button(context);
+		
+		return ll;
+	}
+
+}

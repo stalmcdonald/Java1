@@ -1,0 +1,27 @@
+package com.cmcdonald.SS;
+
+import java.util.HashMap;
+
+public enum Planet {
+
+	MERCURY(1),
+	VENUS(2),
+	EARTH(3),
+	MARS(4),
+	JUPITER(5),
+	SATURN(6),
+	URANUS(7),
+	NEPTUNE(8),
+	PLUTO(9);
+	
+	private final int planNum;
+	Planet(int planNum){
+		this.planNum = planNum;
+	}
+	
+	//hashmap is a datatype kind of like an array
+	public static HashMap<Planet,Integer> getOrder(double order){
+		HashMap<Planet, Integer> fromSun = new HashMap<Planet, Integer>());
+	}
+	
+}

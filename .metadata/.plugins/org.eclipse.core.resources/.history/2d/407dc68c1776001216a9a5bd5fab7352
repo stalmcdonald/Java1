@@ -1,0 +1,23 @@
+/*
+ *  Author: Crystal McDonald
+ *  Class:  Java 1 1302
+ *  Assignment: Week2
+ *  
+ */
+package com.cm.week2;
+
+import android.app.Activity;
+
+
+
+
+
+
+
+public class MainActivity extends Activity {
+	TextView detailsView;
+	private ArrayAdapter<String> listAdapter;
+	private ListView mainListView;
+	String shortDesc;
+	
+}

@@ -1,0 +1,12 @@
+package com.cmcdonald.lib;
+
+import android.content.Context;
+import android.widget.LinearLayout;
+
+public class FormThings {
+	
+	public static LinearLayout singleEntryWithButton(Context){
+		LinearLayout ll = new LinearLayout(context);
+	}
+
+}

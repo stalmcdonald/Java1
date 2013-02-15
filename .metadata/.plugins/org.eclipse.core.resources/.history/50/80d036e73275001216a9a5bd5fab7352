@@ -1,0 +1,17 @@
+package com.cmcdonald.lib;
+
+import android.content.Context;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
+
+public class FormThings {
+	
+	public static LinearLayout singleEntryWithButton(Context context){
+		LinearLayout ll = new LinearLayout(context);
+		LayoutPrams lp = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+		
+		
+		return ll;
+	}
+
+}

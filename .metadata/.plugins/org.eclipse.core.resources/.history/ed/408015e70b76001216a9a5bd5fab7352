@@ -1,0 +1,8 @@
+package com.example.isurvivedtheapocalypse;
+
+public class Example {
+	public String name(){
+		String n = "John";
+		return "n";
+}
+}

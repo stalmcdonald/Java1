@@ -1,0 +1,12 @@
+package SS;
+
+public interface solarsystem {
+	//set name of a planet
+	public boolean setName(String name);
+	//set order of a planet
+	public boolean setOrder(double ssOrder);
+	//get name of a planet
+	public String getName();
+	//get order of a planet
+	public double getOrder();
+}

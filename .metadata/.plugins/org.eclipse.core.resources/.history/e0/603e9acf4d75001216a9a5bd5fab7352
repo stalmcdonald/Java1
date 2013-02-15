@@ -1,0 +1,12 @@
+package com.cmcdonald.SS;
+
+public interface SolarSystem {
+	//set name of a planet
+	
+	//set order of a planet
+	
+	//get name of a planet
+	
+	//get order of a planet
+
+}

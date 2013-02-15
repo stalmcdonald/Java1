@@ -1,0 +1,172 @@
+package com.cm.contacts;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import java.util.*;
+import java.io.*;
+import java.text.*;
+public class ContactsApp {
+public static void main(String[] args) 
+{
+try
+{
+	int ch = 0;
+int ch2 = 0;
+Scanner sc = new Scanner(System.in) ;
+boolean validFile = false;
+Scanner stringReader = new Scanner(System.in);
+String emailChoice = "";
+String finalString = "";
+System.out.println("\n\t\t\tCONTACTS APP");
+System.out.println("--------------------------------------------------------------------------------");
+while(ch != 4)
+{
+		System.out.println("\nPRESS 1 TO CREATE CONTACTS BOOK");
+		System.out.println("PRESS 2 TO LOAD CONTACTS BOOK");
+		System.out.println("PRESS 3 TO DELETE CONTACTS BOOK");
+		System.out.println("PRESS 4 TO EXIT");
+ 		
+		while(!sc.hasNextInt())
+		{
+			System.out.println("\nENTER ONLY NUMBERS IN THE RANGE 1 - 4");
+			sc.nextLine();
+		}
+		
+		ch = sc.nextInt();
+		
+		switch(ch)
+		{
+			case 1: System.out.println("\nENTER NAME OF CONTACTS BOOK TO CREATE WITHOUT ANY FILE EXTENSION");
+			validFile = false;
+			String contactBookName = "";
+			while(!validFile)
+			{
+				 contactBookName = stringReader.nextLine();
+				 if(contactBookName.equals(""))
+				 {
+				 	System.out.println("\nCONTACT BOOK NAME CANNOT BE EMPTY");
+				 	System.out.println("\nENTER NAME OF CONTACTS BOOK TO CREATE WITHOUT ANY FILE EXTENSION");
+				 	continue;
+				 }
+					if(!(contactBookName.contains("/")||contactBookName.contains("\\")||contactBookName.contains(":")||
+					contactBookName.contains("*")||contactBookName.contains("?")||contactBookName.contains("/")||
+					contactBookName.contains("\"")||contactBookName.contains("<")||contactBookName.contains(">")||
+					contactBookName.contains("|")))
+					{
+						String extension[] = contactBookName.split(".");
+						contactBookName = contactBookName + ".txt";
+						File contactBook = new File(contactBookName);
+						if(!contactBook.exists())
+						{
+							System.out.println("\nNEW CONTACTS BOOK CREATED::"+contactBookName);								
+							validFile = true;
+						}
+						else
+						{
+							System.out.println("\nA CONTACTS BOOK WITH NAME "+contactBookName+" ALREADY EXISTS\nPLEASE ENTER A DIFFERENT NAME" );
+						}
+							
+					}
+						
+					else
+					{
+						System.out.println("\nFILE NAME CANNOT CONTAIN : /,\\,\",*,?,<,>,|");
+						System.out.println("\nENTER NAME OF CONTACTS BOOK TO CREATE WITHOUT FILE EXTENSION ");
+					}
+			}
+					
+					contactBookOperations(contactBookName);
+					break;
+					
+					
+			case 2: contactBookName = "";
+					
+					System.out.println("\nENTER NAME OF CONTACTS BOOK WITHOUT EXTENSION TO LOAD");
+					contactBookName = stringReader.nextLine();
+					
+					while(true)
+					{
+						if(contactBookName.equals(""))
+						{
+							System.out.println("\nCONTACT BOOK NAME CANNOT BE EMPTY ");
+							
+						}
+						else
+						{
+							break;
+						}
+					}
+					contactBookName += ".txt";
+					File contactBook = new File(contactBookName);
+					if(!contactBook.exists())
+					{
+						System.out.println("\nA CONTACT BOOK WITH NAME "+contactBookName+" DOES NOT EXIST");
+					}
+					else
+					{
+						contactBookOperations(contactBookName);
+					}
+					break;
+					
+			case 3: contactBookName = "";
+					
+					System.out.println("\nENTER NAME OF CONTACTS BOOK WITHOUT EXTENSION TO DELETE");
+					contactBookName = stringReader.nextLine();
+					
+					
+						if(contactBookName.equals(""))
+						{
+							System.out.println("\nCONTACT BOOK NAME CANNOT BE EMPTY ");
+							
+						}
+						
+					contactBookName += ".txt";
+					 contactBook = new File(contactBookName);
+					if(!contactBook.exists())
+					{
+						System.out.println("\nA CONTACT BOOK WITH NAME "+contactBookName+" DOES NOT EXIST");
+					}
+					else
+					{
+						contactBook.delete();
+						System.out.println("\nA CONTACT BOOK "+contactBookName+" DELETED");
+					}
+					
+					break;
+					
+			case 4: System.out.println("\nOK BYE");
+					break;
+					
+			default: System.out.println("\nENTER ONLY NUMBERS IN THE RANGE 1 - 4");
+					 break;
+					
+					
+		}
+		
+
+
+
+
+private static void contactBookOperations(String contactBookName) {
+	// TODO Auto-generated method stub
+	
+}
+}
+}
+//public class MainActivity extends Activity {
+//
+//	@Override
+//	protected void onCreate(Bundle savedInstanceState) {
+//		super.onCreate(savedInstanceState);
+//		
+//	}
+//
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.activity_main, menu);
+//		return true;
+//	}
+//
+//}
